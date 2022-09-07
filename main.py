@@ -69,6 +69,8 @@ for subject in subjects:
     if ("stdplan-empty-eintrag" in subject.attrs.get("class")):
         # print("Empty Lesson")
         pass
+    elif len(subject.parent.findChildren("div")) > 1 and subject.parent.findChildren("div")[0] != subject:
+        i -= 1
     else:
         event = Event()
         children = subject.findChildren("span")
